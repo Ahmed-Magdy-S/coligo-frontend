@@ -1,0 +1,38 @@
+<div class="container bg-light">
+  <app-dashboard-navbar></app-dashboard-navbar>
+  <div class="bg-white my-4">
+    <h2>Exams time</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa,
+      odit ab? Atque officia tempore facere consequatur, in dolores quos quisquam,
+      odio id vitae soluta sint error? Id libero ipsum maiores.
+    </p>
+    <button type="button" class="btn btn-primary">View exam tips</button>
+  </div>
+  <div class="row">
+    <div class="col-lg-9 col-md-12 bg-white">
+      <h3 class="mb-5">Announcements</h3>
+      <ng-container *ngFor="let announcement of announcements">
+        <div class="row">
+          <div class="col-lg-3 col-md-12">
+            <h6>{{announcement.employee.name}}</h6>
+            <p>{{announcement.employee.department}}</p>
+          </div>
+          <div class="col-lg-9 col-md-12">
+            <p>
+              {{announcement.description}}
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="col-lg-3 col-md-12 bg-white">
+      <h3>What's due</h3>
+      <ng-container *ngFor="let quiz of quizzes">
+        <h6>Unit {{quiz.unit}} quiz</h6>
+        <p>{{quiz.course}}</p>
+        <p>{{quiz.topic}}</p>
+        <p>{{quiz.dueTo | date:'dd MMM y - hh:mma' }}</p>
+      </ng-container>
+  </div>
+</div>
+</div>
